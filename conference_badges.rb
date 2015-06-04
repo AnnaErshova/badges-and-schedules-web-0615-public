@@ -31,14 +31,15 @@ def assign_rooms(speakers) # same logic -- using array as an argument
 end
 
 # 4. Now you have to tell the printer what to print. 
-# Create a method called printer that will output the results of the batch_badge_creator method 
+# Create a method called 'printer' that will output the results of the batch_badge_creator method 
 # and the assign_rooms method to the screen.
 
 def printer(speakers) # the rspec seems to indicate this is 'attendees', but it seems to work for 'speakers' also
   badge_array = batch_badge_creator(speakers)
   room_array = assign_rooms(speakers)
+  count_of_speakers = speakers.length # don't have to use new variable here, but might as well since we are creating it (and it was done that way in lecture)
   order = 0
-  while order < speakers.length
+  while order < count_of_speakers 
     puts badge_array[order] # this works excellently because we start at 0, just like 0th index in the array
     puts room_array[order]
     order += 1
@@ -46,5 +47,5 @@ def printer(speakers) # the rspec seems to indicate this is 'attendees', but it 
 end
   
 # other possible solutions to the printer method:
-#  - .zip method and then iterate over iterate over it
+#  - .zip method and then iterate over it
 #  - nested loop methos (see lecture in class)
