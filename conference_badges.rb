@@ -56,12 +56,22 @@ def printer(speakers) # the rspec seems to indicate this is 'attendees', but it 
   counter = 0
   while counter < speakers.length
     # don't have to use new variable here, but we could
-    puts batch_badge_creator(speakers)[counter] + assign_rooms(speakers)[counter] 
+    puts batch_badge_creator(speakers)[counter] 
+    puts assign_rooms(speakers)[counter] 
     # this works excellently because we start at 0, just like 0th index in the array
     # or can create new arrays to assign method outputs, this this is faster
     counter += 1
   end
 end
+
+
+# def printer(speakers)
+#  for i in 0..speakers.length do 
+#    puts batch_badge_creator(speakers)[i] 
+#    puts assign_rooms(speakers)[i]
+#  end
+# end
+
 
 # def printer(speakers)
 #
